@@ -1,0 +1,9 @@
+.snackbar-success {
+    background-color: #28a745 !important; /* Verde Bootstrap */
+    color: white;
+  }
+  .snackbar-error {
+    background-color: #dc3545 !important; /* Rojo Bootstrap */
+    color: white;
+  }
+    

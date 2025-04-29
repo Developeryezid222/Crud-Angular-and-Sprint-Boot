@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">Lista de Clientes</h3>
+    <a class="btn btn-success" routerLink="/customers/add">
+      ➕ Add Clients
+    </a>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle">
+      <thead class="table-dark text-center">
+        <tr>
+          <th scope="col">#ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Email</th>
+          <th scope="col" colspan="2">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of customers">
+          <td class="text-center">{{ c.id ?? 'N/A' }}</td>
+          <td>{{ c.firstName }}</td>
+          <td>{{ c.lastName }}</td>
+          <td>{{ c.email }}</td>
+          <td class="text-center">
+            <!-- <button class="btn btn-outline-primary btn-sm" routerLink=" '/customers{{c.id}} /edit', { queryParams: { id: c.id } }"> -->
+              <button class="btn btn-outline-primary btn-sm" routerLink="/customers/edit/{{ c.id }}">
+              ✏️ Editar
+            </button>
+          </td>
+          <td class="text-center">
+            <button class="btn btn-outline-danger btn-sm" (click)="deleteCustomer(c.id ?? 0)">
+              
+              🗑️ Delete
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="customers.length === 0">
+          <td colspan="6" class="text-center text-muted py-3">
+            <em>No hay clientes registrados.</em>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<!-- Incluye Bootstrap y Bootstrap Icons en tu index.html -->
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+      <i class="bi bi-person-lines-fill fs-4"></i>
+      CRUD Customers
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">
+            <i class="bi bi-house-door-fill me-1"></i> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="bi bi-people-fill me-1"></i> Customers
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-gear-fill me-1"></i> Options
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#"><i class="bi bi-person-plus me-1"></i> New Customer</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-text me-1"></i> Reports</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-sliders me-1"></i> Settings</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search" (ngSubmit)="getIdCustomer()">
+        <input class="form-control me-2"
+               type="search"
+               placeholder="Search by ID..."
+               [(ngModel)]="searchId"
+               name="search"
+               aria-label="Search">
+        <button class="btn btn-light" type="submit">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+      
+      
+      <a href="#" class="btn btn-outline-light ms-3 d-flex align-items-center">
+        <i class="bi bi-person-circle me-2"></i> Profile
+      </a>
+    </div>
+  </div>
+</nav>

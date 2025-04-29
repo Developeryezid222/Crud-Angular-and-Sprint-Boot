@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow rounded-4 border-0">
+        <div class="card-header bg-primary text-white text-center rounded-top-4">
+          <h4 class="mb-0">📝 Add Client</h4>
+        </div>
+        <div class="card-body p-4">
+          <form [formGroup]="form" (ngSubmit)="addCustomer()" novalidate>
+            <!-- First Name -->
+            <div class="mb-3">
+              <label for="firstName" class="form-label">Nombre</label>
+              <input
+                type="text"
+                id="firstName"
+                class="form-control"
+                placeholder="firstName"
+                formControlName="firstName"
+                autocomplete="given-name"
+                aria-describedby="firstNameHelp"
+                [ngClass]="{ 'is-invalid': form.get('firstName')?.invalid && form.get('firstName')?.touched }"
+              />
+              <div class="invalid-feedback">
+                El nombre es requerido.
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Apellido</label>
+              <input
+                type="text"
+                id="lastName"
+                class="form-control"
+                placeholder="lastName"
+                formControlName="lastName"
+                autocomplete="family-name"
+                aria-describedby="lastNameHelp"
+                [ngClass]="{ 'is-invalid': form.get('lastName')?.invalid && form.get('lastName')?.touched }"
+              />
+              <div class="invalid-feedback">
+                El apellido es requerido.
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Email"
+                formControlName="email"
+                autocomplete="email"
+                aria-describedby="emailHelp"
+                [ngClass]="{ 'is-invalid': form.get('email')?.invalid && form.get('email')?.touched }"
+              />
+              <div class="invalid-feedback">
+                Ingresa un correo electrónico válido.
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success btn-lg">
+                Save Client
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
